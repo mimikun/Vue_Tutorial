@@ -11,15 +11,25 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-<div id="app-6">
-    <p>{{ message }}</p>
-    <input v-model="message">
+<div id="app-7">
+    <ol>
+        <todo-item v-for="item in loveShipList" v-bind:todo="item"></todo-item>
+    </ol>
 </div>
 <script>
-    var app6 = new Vue({
-        el: '#app-6',
+    Vue.component('todo-item',{
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    })
+
+    var app7 = new Vue({
+        el: '#app-7',
         data: {
-            message: 'Hello, Vue!'
+            loveShipList: [
+                { id:0, text: 'Yukikaze' },
+                { id:1, text: 'Tokitsukaze' },
+                { id:2, text: 'Yukikaze' }
+            ]
         }
     })
 </script>
