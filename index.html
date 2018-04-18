@@ -11,17 +11,16 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-<div id="app-2">
-    <span v-bind:title="message">
-        マウスを数秒間私の上に置いてください
-        私の動的に縛られたタイトルを見る！
+<div id="app-3">
+    <span v-if="seen">
+        今あなたは私を見る！
     </span>
 </div>
 <script>
-    var app2 = new Vue({
-        el: '#app-2',
+    var app3 = new Vue({
+        el: '#app-3',
         data: {
-            message: 'あなたはこのページを読み込んだ！' + new Date(),toLocalString()
+            seen:true
         }
     })
 </script>
