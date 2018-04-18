@@ -11,16 +11,22 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-<div id="app-3">
-    <span v-if="seen">
-        今あなたは私を見る！
-    </span>
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ol>
 </div>
 <script>
-    var app3 = new Vue({
-        el: '#app-3',
+    var app4 = new Vue({
+        el: '#app-4',
         data: {
-            seen:true
+            todos: [
+                { text: 'Learn JavaScript' },
+                { text: 'Learn React' },
+                { text: 'Build something awesome.' }
+            ]
         }
     })
 </script>
